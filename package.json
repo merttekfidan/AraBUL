@@ -1,0 +1,30 @@
+{
+  "name": "arabul",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build",
+    "lint": "vue-cli-service lint",
+    "dev": "vite",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "axios": "^1.2.0",
+    "vue": "^3.2.37",
+    "vuetify": "^3.0.3",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.0.96",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/eslint-config-airbnb": "^6.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-plugin-vuejs-accessibility": "^1.1.0",
+    "prettier": "^2.5.1",
+    "vite": "^3.0.1"
+  }
+}
