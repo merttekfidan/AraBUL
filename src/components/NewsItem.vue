@@ -1,38 +1,47 @@
-<template>
-    <v-row no-gutters>
+<template v-if="this.articles.status === 'ok'">
+    <div  v-if='this.articles.totalResults===0'>
+        <h6 class='text-h6 d-flex justify-center'>No results found !</h6>
+    </div>
+    <div class='ma-3 pa-3' v-for='(article,i) in this.articles.articles' :key='i'>
+    <v-row>
         <v-col cols="10">
-    
-            <div class='text-overline'>Source</div>
-            <div class='text-h6'><a class='text-decoration-none' href='#'>Title</a></div>
-            <p>Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions Descriptions </p>
-            <div class='text-caption'>26.03.1992</div>
-
-      </v-col>
-      <v-col cols="2" class='d-flex align-items'>
+            <div class='text-overline'>{{article.author!==null ? article.author + ' - ': ''}}{{article.source.name}}</div>
+            <div class='text-h6'><a class='text-decoration-none' :href='article.url'>{{article.title}}</a></div>
+            <p v-html="article.description"></p>
+            <div class='text-caption d-flex justify-end'>{{article.publishedAt}}</div>
+        </v-col>
+        <v-col cols="2" class='d-flex'>
             <v-img
-                class="bg-white"
                 :aspect-ratio="1"
-                src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+                :src='article.urlToImage'
                 cover
             ></v-img>
-      </v-col>
+        </v-col>
     </v-row>
-    
-    <v-row></v-row>    
+    </div>   
 </template>
 
 <script>
 export default {
-    props: ['article'],
-    created(){
-        console.log('news', this.article)
-    }
+    props: ['articles'],
 
+    created(){
+        console.log('created:' , this.articles)
+    },
+    updated(){ 
+        console.log('updated:' , this.articles)
+    },
+    
+    
 }
 </script>
 
 <style>
-    .detail-layout{
-        grid-template-rows:100px 100px 100px;
+    .grid-date{
+        position: absolute;
+        bottom: 0;
+    }
+    .grid-position{
+        position:static
     }
 </style>

@@ -20,6 +20,10 @@ export const store = createStore({
             status:'',
             totalResults:0,
             articles:{},
+        },
+        pagination:{
+            currentPage:1,
+            chunk:25,
         }
     },
     mutations:{
