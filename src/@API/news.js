@@ -4,7 +4,7 @@ import axios from 'axios'
 const API_KEY = 'dc67407d27a64ecebeeb8711c6af97ba'
 const URL = 'https://newsapi.org/v2/everything'
 axios.defaults.headers['X-API-KEY'] = API_KEY;
-axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
+//axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
 
 
@@ -17,7 +17,6 @@ const filterToQuery = (q) =>{
         sortBy:q.sortBy
     }
     let stringifiedQuery = Object.entries(query).map(e=> e.join('=')).join('&')
-    let defaultFeed = '?q=default&from=2022-11-11'
     return `?${stringifiedQuery}`
 }
 //`https://newsapi.org/v2/everything?q=asd
@@ -27,18 +26,15 @@ const filterToQuery = (q) =>{
 
 const searchArticles = async(query) =>{
     if(query.keyword==null){
-        console.log('no keyword')
         return ''
     }
     let data = await axios.get(URL+filterToQuery(query))
     .then(res =>{
-        console.log('api res: ' ,res)
         return res;
     })
     .catch(err=>{
         throw err
     })
-    console.log('API DATA' + data)
     return data
 }
 
