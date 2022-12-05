@@ -4,7 +4,9 @@ import axios from 'axios'
 const API_KEY = 'dc67407d27a64ecebeeb8711c6af97ba'
 const URL = 'https://newsapi.org/v2/everything'
 axios.defaults.headers['X-API-KEY'] = API_KEY;
+axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
+
 
 
 const filterToQuery = (q) =>{

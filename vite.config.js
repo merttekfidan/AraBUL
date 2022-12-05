@@ -11,13 +11,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  proxyTable: {
-    '/api': {
-      target: 'https://newsapi.org/',
-      changeOrigin: true,
-      pathRewrite: {
-        '^/api': ''
-      }
-    }
-  }
 });
