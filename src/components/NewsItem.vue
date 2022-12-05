@@ -24,15 +24,6 @@
 <script>
 export default {
     props: ['articles'],
-
-    created(){
-        console.log('created:' , this.articles)
-    },
-    updated(){ 
-        console.log('updated:' , this.articles)
-    },
-    
-    
 }
 </script>
 

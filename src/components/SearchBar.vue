@@ -8,7 +8,7 @@ export default {
     onSearch() {
       if(this.searchBarValue!==''){
         this.$store.dispatch('catchNews', {
-        keyword: this.searchBarValue, from: '2022-11-05', to: '2022-12-03', sortBy: 'popularity',
+        keyword: this.searchBarValue, from: '2022-11-12', to: '2022-12-03', sortBy: 'popularity',
         })
       }else{
         this.$store.dispatch('catchNews', {});
